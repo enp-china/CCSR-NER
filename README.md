@@ -26,16 +26,15 @@ You need to have python >= 3.7
 flair==0.4.1
 Cython==0.29.6
 spacy==2.1.3
-progressbar==2.5
 ```
 
 
 ## Installing
 
-You need to clone the project git@gitlab.com:enpchina/ner.git
+You need to clone the project https://github.com/enp-china/CCSR-NER.git
 
 ```
-git clone git@gitlab.com:enpchina/ner.git
+git clone https://github.com/enp-china/CCSR-NER.git
 ```
 
 # Train the language model
