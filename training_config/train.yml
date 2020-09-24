@@ -1,0 +1,52 @@
+dataset_reader:
+  # Index of the text in your conll format file
+  position_text: 0
+  # Index of the ner tag in your conll format file
+  position_ner: 1
+  # Path of the folder containing your data
+  data_folder : "data/resume/"
+  # Name of the training file 
+  train_name: "train"
+  # Name of the dev file
+  dev_name: "dev"
+  # Name of the test file
+  test_name: "test"
+  # If you want to train a model on specific named entity you can give a list of the different name ( eg : ["PER","LOC"] ) or if you want to train it on all just let "all" 
+  focus_on: "all"
+  # If you only have a train file put this argument on true and it will select randomly 10% and 10% of the training file for the dev and test file respectivly 
+  only_train: false
+embeddings:
+  lang: "zh"
+  # Please follow the Embeddings description of the readme to see how to use ours embeddings
+  embeddings_list: ["embeddings/fasttext.char.vec"]
+model:
+  hidden_size: 128
+  use_crf: true
+  dropout: 0.0
+  word_dropout: 0.05
+  locked_dropout: 0.5
+  rnn_layers: 1
+train_config:
+  learning_rate: 0.1
+  # After the patience is done learning rate = learning rate * anneal factor
+  anneal_factor: 0.5
+  # minimum learning rate mean the stop of the training ( because learning rate is update with the patience )
+  min_learning_rate: 0.0001
+  batch_size: 16
+  epoch: 100
+  # Final model = model at the end of the training . best model will be save anyway
+  save_final_model: false
+  checkpoint: true
+  # The param_selection_mode will not save any model and will not evaluate the model on the test file. 
+  param_selection_mode: false
+  # Where do you want to save the model.
+  folder: "result/CharBichar"
+  save_plot_training_curve: false
+  save_plot_weights: false
+  # After  | patience | epochs without better result learning rate = learning rate * anneal factor
+  patience : 3
+  monitor_test: true
+  embeddings_storage_mode: "cpu"
+  # At each epoch do you want to suffle the train, to avoid overfitting in the first batch
+  shuffle: true
+
