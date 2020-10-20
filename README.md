@@ -39,7 +39,7 @@ git clone https://github.com/enp-china/CCSR-NER.git
 
 # Train the language model
 
-If you want to use the same data we used, unzip the `data/wiki7M.raw.bz2` archive and go to [Char language model](#char-language-model) or [Language model with word segmentation information](#language-model-with-word-segmentation-information) depending on the language model you want. 
+If you want to use the same data we used, download and unzip the `wiki7M.raw.bz2` archive from [Zenodo](https://zenodo.org/record/4109839) and go to [Char language model](#char-language-model) or [Language model with word segmentation information](#language-model-with-word-segmentation-information) depending on the language model you want. 
 this archive is a sample wikipedia of about 7 million sentences. If you want to use the entire wikipedia, please follow the first two parts below.
 
 ## download the data
