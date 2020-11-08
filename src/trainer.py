@@ -17,7 +17,7 @@ from flair.embeddings import (
 import json
 from flair.data import Corpus
 from flair.visual.training_curves import Plotter
-from utils.trainer_utils import make_tag_dic, generateNerEmbFromTrain, ColumnCorpusTrain
+from .utils.trainer_utils import make_tag_dic, generateNerEmbFromTrain, ColumnCorpusTrain
 import embeddings as emb
 from pathlib import Path
 from flair.models import SequenceTagger

@@ -9,7 +9,7 @@ def generate_dictionary(file_path):
     processed = 0
 
     import glob
-    files = glob.glob(file_path+'*.*')
+    files = glob.glob(file_path+'train/*')
 
     print(files)
     for file in files:
@@ -20,7 +20,7 @@ def generate_dictionary(file_path):
             for line in f:
 
                 processed += 1            
-                chars = list(line)
+                chars = line.split(' ')
                 tokens += len(chars)
 
                 # Add chars to the dictionary
@@ -49,9 +49,9 @@ def generate_dictionary(file_path):
 
         char_dictionary.add_item(letter)
         idx += 1
-        print('%d\t%s\t%7d\t%7d\t%f' % (idx, letter, count, sum, percentile))
+        #print('%d\t%s\t%7d\t%7d\t%f' % (idx, letter, count, sum, percentile))
 
-    print(char_dictionary.item2idx)
+    #print(char_dictionary.item2idx)
 
     import pickle
     with open(file_path+'mappings', 'wb') as f:
@@ -92,5 +92,6 @@ def train_LM(file_path,model_path,is_forward_lm=True):
                   max_epochs=10)
 
 if __name__ == "__main__":
+    import sys
     generate_dictionary(sys.argv[1])
     train_LM(sys.argv[1],sys.argv[2],bool(sys.argv[3]))
