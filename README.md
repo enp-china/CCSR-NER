@@ -86,13 +86,15 @@ If you want to train our char-seg language model you'll need to run the `python 
 
 #### Unsupervised segmentation
 
-- For the unsupervised segmentation we used eleve ( https://github.com/kodexlab/eleve ).
+For the unsupervised segmentation we used eleve ( https://github.com/kodexlab/eleve ).
+Once the package is pip-installed, you can use the `eleve-chinese` command line tool.
+Remember to use the `-bies` option to obtain correctly formated data.
 
 <details>
 <summary><b>Usage details</b></summary><blockquote><p align="justify">
 
-- To train a model : `python language_model/train_unsup_seg.py action train --corpus data/wiki7M.raw --model model_name [--training_length 1000000]`
-- To segment a file : `python language_model/train_unsup_seg.py action segment --corpus data/wiki7M.raw --model model_name --target data/wiki7M.raw.seg`
+- To train a model : `eleve-chinese train --corpus data/wiki7M.raw --model model_name [--training_length 1000000]`
+- To segment a file : `eleve-chinese segment --corpus data/wiki7M.raw --model model_name --target data/wiki7M.raw.seg --bies`
 
 </p></blockquote></details>
 
